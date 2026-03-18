@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DesignPattern-Pizza")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ed1dca5dc5d8aa22f3c1f9b009bf5234ecca33df")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d8e5a9dcaf37fa9a6512a825ce4bb0e70aa7541f")]
 [assembly: System.Reflection.AssemblyProductAttribute("DesignPattern-Pizza")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DesignPattern-Pizza")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
