@@ -69,7 +69,7 @@
                             <!-- Intro text -->
                             <TextBlock Text="I would like a pizza with:" FontSize="18" Foreground="#34495E" Margin="0,5,0,10"/>
                             <!-- Requested toppings — update these dynamically at runtime -->
-                            <TextBlock Text="🍅 Tomato Sauce" FontSize="20" FontWeight="Bold" Foreground="#C0392B" Margin="0,2,0,0"/>
+                            <TextBlock Text="🍅 Margherita" FontSize="20" FontWeight="Bold" Foreground="#C0392B" Margin="0,2,0,0"/>
                             <TextBlock Text="🧀 Mozzarella"   FontSize="20" FontWeight="Bold" Foreground="#F1C40F" Margin="0,2,0,0"/>
                             <TextBlock Text="🥩 Kebab"    FontSize="20" FontWeight="Bold" Foreground="Brown" Margin="0,2,0,0"/>
                         </StackPanel>
@@ -189,7 +189,64 @@
                    
                     </WrapPanel>
                     <!-- END COLUMN 0 — INGREDIENT BUTTONS -->
+                    <!-- COLUMN 1 — BASE SELECTED Player picks Margherita or Bianca
+                    before adding any toppings.-->
+                    <StackPanel Grid.Column="1"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Left"
+                                Margin="10,0">
 
+                        <TextBlock Text="Choose base:"
+                                   FontSize="16" FontWeight="Bold" Foreground="#2C3E50"
+                                   HorizontalAlignment="Center"
+                                   Margin="0,0,0,12"/>
+
+                        <!-- Margherita button -->
+                        <Button x:Name="BtnMargherita"
+                                Width="130" Height="130" Margin="0,0,0,30"
+                                Background="#C0392B" BorderBrush="#922B21" BorderThickness="4"
+                                Cursor="Hand" Click="Margherita_Click">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid>
+                                        <Ellipse Fill="{TemplateBinding Background}"
+                                                 Stroke="{TemplateBinding BorderBrush}"
+                                                 StrokeThickness="4"/>
+                                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <TextBlock Text="Margherita"
+                                                       FontSize="17" FontWeight="Bold"
+                                                       Foreground="White"
+                                                       HorizontalAlignment="Center"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+
+                        <!-- Bianca button -->
+                        <Button x:Name="BtnBianca"
+                                Width="130" Height="130"
+                                Background="#F8F9F9" BorderBrush="#AEB6BF" BorderThickness="4"
+                                Cursor="Hand">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid>
+                                        <Ellipse Fill="{TemplateBinding Background}"
+                                                 Stroke="{TemplateBinding BorderBrush}"
+                                                 StrokeThickness="4"/>
+                                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <TextBlock Text="Bianca"
+                                                       FontSize="17" FontWeight="Bold"
+                                                       Foreground="#5D6D7E"
+                                                       HorizontalAlignment="Center"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+
+                    </StackPanel>
+                    <!-- END COLUMN 1 -->
                     <!--
                          COLUMN 1 — PIZZA CANVAS
                          Visual representation of the pizza being assembled.
@@ -199,7 +256,7 @@
                     <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
 
                         <!-- Pizza visual container (500x500) -->
-                        <Grid Width="500" Height="500">
+                        <Grid x:Name="PizzaCanvas" Width="500" Height="500">
                             <!-- Outer crust ring — dark orange border -->
                             <Ellipse Fill="#E67E22" Stroke="#BA4A00" StrokeThickness="10" />
                             <!-- Inner dough surface — lighter peach colour -->
