@@ -186,13 +186,6 @@
                             </Button.Template>
                         </Button>
 
-                        <!-- Undo button — removes the last added topping (Command pattern hook point) -->
-                        <Button Width="130" Height="60" Margin="15,40,15,15"
-                                Background="#95A5A6" BorderBrush="#7F8C8D" BorderThickness="3"
-                                Cursor="Hand">
-                            <TextBlock Text="↩ Undo" FontSize="18" FontWeight="Bold" Foreground="White" />
-                        </Button>
-
                     </WrapPanel>
                     <!-- END COLUMN 0 — INGREDIENT BUTTONS -->
 
