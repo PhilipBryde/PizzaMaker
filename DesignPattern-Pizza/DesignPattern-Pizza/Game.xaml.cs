@@ -24,13 +24,47 @@ namespace DesignPattern_Pizza
         public Game()
         {
             InitializeComponent();
-            _currentPizza = new MargheritaBase();
+            _currentPizza = new Base();
         }
 
+
+        // Bases 
+        private void Margherita_Click(object sender, RoutedEventArgs e)
+        {
+            _currentPizza = new MargheritaBase(_currentPizza);
+            var MargheritaImg = new Image
+            {
+                Source = new BitmapImage(new Uri("pack://application:,,,/images_png/Margarita base.png")),
+                Width = 500,
+                Height = 500,
+                Stretch = Stretch.Uniform,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                VerticalAlignment = VerticalAlignment.Center,
+            };
+            PizzaCanvas.Children.Add(MargheritaImg);
+            MessageBox.Show($"Added: Margherita\n{_currentPizza.GetDescription()}\nPris:{_currentPizza.GetPrice()} kr");
+        }
+
+
+
+
+        // Toppings
         private void Kebab_Click(object sender, RoutedEventArgs e)
         {
             _currentPizza = new KebabDecorator(_currentPizza);
+            var kebabImg = new Image
+            {
+                Source = new BitmapImage(new Uri("pack://application:,,,/images_png/Kebab_Topping.png")),
+                Width = 650,
+                Height = 650,
+                Stretch = Stretch.Uniform,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                VerticalAlignment = VerticalAlignment.Center,
+            };
+            PizzaCanvas.Children.Add(kebabImg);
             MessageBox.Show($"Added: Kebab\n{_currentPizza.GetDescription()}\nPris:{_currentPizza.GetPrice()} kr");
+
+
         }
 
         private void Parma_Click(object sender, RoutedEventArgs e)
@@ -47,5 +81,7 @@ namespace DesignPattern_Pizza
         {
 
         }
+
+
     }
 }

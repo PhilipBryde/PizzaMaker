@@ -3,17 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DesignPattern_Pizza.Topping;
 
 namespace DesignPattern_Pizza
 {
-    public class MargheritaBase : IPizza
+    public class MargheritaBase : ToppingDecorator
     {
-        public string GetDescription()
+        public MargheritaBase(IPizza pizza) : base(pizza)
+        { 
+        }
+
+        public override string GetDescription()
         {
             return "Margerita pizza";
         }
-
-        public decimal GetPrice()
+        
+        public override decimal GetPrice()
         {
             return 40;
         }
