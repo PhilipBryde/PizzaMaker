@@ -132,7 +132,7 @@
                         <!-- Kebab button -->
                         <Button x:Name="KebabButton" Width="130" Height="130" Margin="15"
                                 Background="Brown" BorderBrush="#873600" BorderThickness="4"
-                                Cursor="Hand" Click="Button_Click">
+                                Cursor="Hand" Click="Kebab_Click">
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
                                     <Grid>
@@ -147,7 +147,7 @@
                         <!-- Mozzarella button -->
                         <Button x:Name="MozzaButton" Width="130" Height="130" Margin="15"
                                 Background="AntiqueWhite" BorderBrush="#B7950B" BorderThickness="4"
-                                Cursor="Hand">
+                                Cursor="Hand" Click="Mozza_Click">
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
                                     <Grid>
@@ -161,7 +161,7 @@
                         <!-- Parma (Parma ham) button -->
                         <Button x:Name="ParmaButton" Width="130" Height="130" Margin="15"
                                 Background="#E74C3C" BorderBrush="#943126" BorderThickness="4"
-                                Cursor="Hand">
+                                Cursor="Hand" Click="Parma_Click">
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
                                     <Grid>
@@ -175,7 +175,7 @@
                         <!-- Gorgonzola button (label abbreviated to fit circle) -->
                         <Button x:Name="GorgonButton" Width="130" Height="130" Margin="15"
                                 Background="#5DADE2" BorderBrush="#2874A6" BorderThickness="4"
-                                Cursor="Hand">
+                                Cursor="Hand" Click="Gorgon_Click">
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
                                     <Grid>
