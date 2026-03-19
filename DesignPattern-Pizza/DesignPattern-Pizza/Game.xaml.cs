@@ -54,9 +54,9 @@ namespace DesignPattern_Pizza
             _currentPizza = new KebabDecorator(_currentPizza);
             var kebabImg = new Image
             {
-                Source = new BitmapImage(new Uri("pack://application:,,,/images_png/Kebab Topping.png")),
-                Width = 300,
-                Height = 300,
+                Source = new BitmapImage(new Uri("pack://application:,,,/images_png/Kebab_Topping.png")),
+                Width = 650,
+                Height = 650,
                 Stretch = Stretch.Uniform,
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Center,

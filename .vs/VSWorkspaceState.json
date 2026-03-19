@@ -2,7 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\DesignPattern-Pizza",
-    "\\DesignPattern-Pizza\\DesignPattern-Pizza"
+    "\\DesignPattern-Pizza\\DesignPattern-Pizza",
+    "\\DesignPattern-Pizza\\DesignPattern-Pizza\\images_png"
   ],
   "SelectedNode": "\\DesignPattern-Pizza\\DesignPattern-Pizza\\Game.xaml.cs",
   "PreviewInSolutionExplorer": false
