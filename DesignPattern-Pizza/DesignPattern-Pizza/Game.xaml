@@ -191,10 +191,15 @@
                             <Ellipse Width="420" Height="420" Fill="#F5CBA7" Stroke="#E59866" StrokeThickness="8" />
                         </Grid>
 
-                        <TextBlock x:Name="PizzaStatusLabel"
+                        <TextBlock x:Name="PizzaStatusBlock"
                                    Text="Your Pizza: Empty"
                                    FontSize="24" FontWeight="Bold" Foreground="#2C3E50"
                                    HorizontalAlignment="Center" Margin="0,20,0,0"/>
+
+                        <TextBlock x:Name="PriceStatusBlock"
+                                   Text="Current Price: "
+                                   FontSize="24" FontWeight="Bold" Foreground="#2C3E50"
+                                   HorizontalAlignment="Center" Margin="0,2,0,0"/>
 
                     </StackPanel>
 

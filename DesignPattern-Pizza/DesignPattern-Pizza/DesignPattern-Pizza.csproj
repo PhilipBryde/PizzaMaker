@@ -17,6 +17,13 @@
     <None Remove="images_png\Margarita base.png" />
     <None Remove="images_png\Mozzarella Topping.png" />
     <None Remove="images_png\Parma Topping.png" />
+    <None Remove="Sounds\balloon.mp3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Sounds\balloon.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
