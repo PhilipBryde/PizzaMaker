@@ -20,7 +20,6 @@
             <!-- TOP HUD -->
             <Grid Grid.Row="0">
 
-                <!-- Orange shelf at bottom of HUD -->
                 <Rectangle VerticalAlignment="Bottom" Height="80" Fill="#E67E22" Stroke="#D35400" StrokeThickness="4" />
 
                 <Grid Margin="30">
@@ -62,7 +61,8 @@
                             Margin="0,20,20,0">
                         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                             <TextBlock Text="💰 EARNINGS" FontSize="20" FontWeight="Bold" Foreground="#1ABC9C" HorizontalAlignment="Center"/>
-                            <TextBlock Text="DKK 0.00"    FontSize="42" FontWeight="Bold" Foreground="#2ECC71" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                            <TextBlock x:Name="EarningsLabel"
+                                       Text="DKK 0.00" FontSize="42" FontWeight="Bold" Foreground="#2ECC71" HorizontalAlignment="Center" Margin="0,10,0,0"/>
                         </StackPanel>
                     </Border>
 
@@ -200,21 +200,24 @@
                             BorderBrush="#2C3E50" BorderThickness="10">
                         <StackPanel VerticalAlignment="Center" Margin="20">
 
-                            <!-- Oven chamber -->
                             <Border Background="#17202A" Height="250"
                                     CornerRadius="150,150,15,15"
                                     BorderBrush="#7F8C8D" BorderThickness="5"
                                     Margin="0,0,0,40">
-                                <TextBlock Text="🔥 🔥 🔥" FontSize="48"
+                                <!-- Flames — start dark, turn red on bake -->
+                                <TextBlock x:Name="FlameLabel"
+                                           Text="🔥 🔥 🔥" FontSize="48"
+                                           Foreground="#333333"
                                            VerticalAlignment="Bottom" HorizontalAlignment="Center"
                                            Margin="0,0,0,20"/>
                             </Border>
 
-                            <Button Content="BAKE PIZZA"
+                            <Button x:Name="BakeButton"
+                                    Content="BAKE PIZZA"
                                     FontSize="32" FontWeight="Bold" Height="80"
                                     Background="#27AE60" Foreground="White"
                                     BorderThickness="4" BorderBrush="#1E8449"
-                                    Cursor="Hand" />
+                                    Cursor="Hand" Click="Bake_Click"/>
 
                         </StackPanel>
                     </Border>
