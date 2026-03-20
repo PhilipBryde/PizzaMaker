@@ -41,7 +41,14 @@ namespace DesignPattern_Pizza
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Center,
             };
+
+            var sound = new MediaPlayer();
+            sound.Open(new Uri("Sounds/balloon.mp3", UriKind.Relative));
+            sound.Play();
+            
             PizzaCanvas.Children.Add(MargheritaImg);
+            PizzaStatusBlock.Text = $"{_currentPizza.GetDescription()}";
+            PriceStatusBlock.Text = $"Current Price: {_currentPizza.GetPrice()} kr.";
             MessageBox.Show($"Added: Margherita\n{_currentPizza.GetDescription()}\nPris:{_currentPizza.GetPrice()} kr");
         }
 
@@ -61,7 +68,14 @@ namespace DesignPattern_Pizza
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Center,
             };
+
+            var sound = new MediaPlayer();
+            sound.Open(new Uri("Sounds/balloon.mp3", UriKind.Relative));
+            sound.Play();
+
             PizzaCanvas.Children.Add(kebabImg);
+            PizzaStatusBlock.Text = $"{_currentPizza.GetDescription()}";
+            PriceStatusBlock.Text = $"Current Price: {_currentPizza.GetPrice()} kr.";
             MessageBox.Show($"Added: Kebab\n{_currentPizza.GetDescription()}\nPris:{_currentPizza.GetPrice()} kr");
 
 
@@ -79,7 +93,14 @@ namespace DesignPattern_Pizza
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Center,
             };
+
+            var sound = new MediaPlayer();
+            sound.Open(new Uri("Sounds/balloon.mp3", UriKind.Relative));
+            sound.Play();
+
             PizzaCanvas.Children.Add(parmaImg);
+            PizzaStatusBlock.Text = $"{_currentPizza.GetDescription()}";
+            PriceStatusBlock.Text = $"Current Price: {_currentPizza.GetPrice()} kr.";
             MessageBox.Show($"Added: Parma ham\n{_currentPizza.GetDescription()}\nPris:{_currentPizza.GetPrice()} kr");
         }
 
@@ -95,7 +116,14 @@ namespace DesignPattern_Pizza
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Center,
             };
+
+            var sound = new MediaPlayer();
+            sound.Open(new Uri("Sounds/balloon.mp3", UriKind.Relative));
+            sound.Play();
+
             PizzaCanvas.Children.Add(gorgonImg);
+            PizzaStatusBlock.Text = $"{_currentPizza.GetDescription()}";
+            PriceStatusBlock.Text = $"Current Price: {_currentPizza.GetPrice()} kr.";
             MessageBox.Show($"Added: Gorgonzola\n{_currentPizza.GetDescription()}\nPris:{_currentPizza.GetPrice()} kr");
 
         }
@@ -112,7 +140,14 @@ namespace DesignPattern_Pizza
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Center,
             };
+
+            var sound = new MediaPlayer();
+            sound.Open(new Uri("Sounds/balloon.mp3", UriKind.Relative));
+            sound.Play();
+
             PizzaCanvas.Children.Add(mozzaImg);
+            PizzaStatusBlock.Text = $"{_currentPizza.GetDescription()}";
+            PriceStatusBlock.Text = $"Current Price: {_currentPizza.GetPrice()} kr.";
             MessageBox.Show($"Added: Mozzarella\n{_currentPizza.GetDescription()}\nPris:{_currentPizza.GetPrice()} kr");
 
         }
@@ -129,7 +164,14 @@ namespace DesignPattern_Pizza
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Center,
             };
+
+            var sound = new MediaPlayer();
+            sound.Open(new Uri("Sounds/balloon.mp3", UriKind.Relative));
+            sound.Play();
+
             PizzaCanvas.Children.Add(biancaImg);
+            PizzaStatusBlock.Text = $"{_currentPizza.GetDescription()}";
+            PriceStatusBlock.Text = $"Current Price: {_currentPizza.GetPrice()} kr.";
             MessageBox.Show($"Added: Bianca\n{_currentPizza.GetDescription()}\nPris:{_currentPizza.GetPrice()} kr");
         }
     }

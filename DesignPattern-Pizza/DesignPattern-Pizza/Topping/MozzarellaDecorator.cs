@@ -14,7 +14,7 @@ namespace DesignPattern_Pizza.Topping
 
         public override string GetDescription()
         {
-            return _pizza.GetDescription() + " Mozzarella";
+            return _pizza.GetDescription() + " + Mozzarella";
         }
 
         public override decimal GetPrice()

@@ -21,7 +21,7 @@ namespace DesignPattern_Pizza.Topping
 
         public override string GetDescription()
         {
-            return _pizza.GetDescription() + " Parma ham";
+            return _pizza.GetDescription() + " + Parma ham";
         }
     }
 }
