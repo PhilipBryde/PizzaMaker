@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesignPattern_Pizza
 {
-    internal interface IObserver
+    public interface IObserver
     {
 
         void Update(IPizza ipizza)

@@ -11,7 +11,7 @@ namespace DesignPattern_Pizza
 {
     public partial class Game : Window
     {
-        IPizza _currentPizza;
+        private PizzaSubject _pizzaSubject = new PizzaSubject();
         private decimal _earnings = 0;
         private bool _baseChosen = false;
         private CustomerOrder _order;
@@ -19,7 +19,9 @@ namespace DesignPattern_Pizza
         public Game()
         {
             InitializeComponent();
-            _currentPizza = new Base();
+            //_currentPizza = new Base();
+            _pizzaSubject.NewObserver(new PriceObserver(PriceStatusBlock));
+            _pizzaSubject.NewObserver(new DescriptionObserver(PizzaStatusBlock));
             _order = new CustomerOrder();
             UpdateCustomerBubble();
         }
@@ -39,7 +41,8 @@ namespace DesignPattern_Pizza
 
         private void ResetPizza()
         {
-            _currentPizza = new Base();
+            //_currentPizza = new Base();
+            _pizzaSubject.SetPizza(new Base());
             _baseChosen = false;
 
             var toRemove = new List<UIElement>();
@@ -51,8 +54,8 @@ namespace DesignPattern_Pizza
             BtnMargherita.IsEnabled = true;
             BtnBianca.IsEnabled = true;
             FlameLabel.Foreground = new SolidColorBrush(Color.FromRgb(51, 51, 51));
-            PizzaStatusBlock.Text = "Your Pizza: Empty";
-            PriceStatusBlock.Text = "Current Price: ";
+            //PizzaStatusBlock.Text = "Your Pizza: Empty";
+            //PriceStatusBlock.Text = "Current Price: ";
         }
 
         private void UpdateCustomerBubble()
@@ -109,7 +112,7 @@ namespace DesignPattern_Pizza
             _baseChosen = true;
             LockBases();
 
-            _currentPizza = new MargheritaBase(_currentPizza);
+            _pizzaSubject.SetPizza(new MargheritaBase(_pizzaSubject.GetPizza()));
             var img = new Image
             {
                 Source = new BitmapImage(new Uri("pack://application:,,,/images_png/Margarita base.png")),
@@ -121,8 +124,8 @@ namespace DesignPattern_Pizza
             };
             PlaySound();
             PizzaCanvas.Children.Add(img);
-            PizzaStatusBlock.Text = _currentPizza.GetDescription();
-            PriceStatusBlock.Text = $"Current Price: {_currentPizza.GetPrice()} kr.";
+            //PizzaStatusBlock.Text = _currentPizza.GetDescription();
+            //PriceStatusBlock.Text = $"Current Price: {_currentPizza.GetPrice()} kr.";
         }
 
         private void Bianca_Click(object sender, RoutedEventArgs e)
@@ -131,7 +134,7 @@ namespace DesignPattern_Pizza
             _baseChosen = true;
             LockBases();
 
-            _currentPizza = new BiancaBase(_currentPizza);
+            _pizzaSubject.SetPizza(new BiancaBase(_pizzaSubject.GetPizza()));
             var img = new Image
             {
                 Source = new BitmapImage(new Uri("pack://application:,,,/images_png/Bianca base.png")),
@@ -143,15 +146,15 @@ namespace DesignPattern_Pizza
             };
             PlaySound();
             PizzaCanvas.Children.Add(img);
-            PizzaStatusBlock.Text = _currentPizza.GetDescription();
-            PriceStatusBlock.Text = $"Current Price: {_currentPizza.GetPrice()} kr.";
+            //PizzaStatusBlock.Text = _currentPizza.GetDescription();
+            //PriceStatusBlock.Text = $"Current Price: {_currentPizza.GetPrice()} kr.";
         }
 
         // Toppings
         private void Kebab_Click(object sender, RoutedEventArgs e)
         {
             if (!_baseChosen) { MessageBox.Show("Choose a base first!"); return; }
-            _currentPizza = new KebabDecorator(_currentPizza);
+            _pizzaSubject.SetPizza(new KebabDecorator(_pizzaSubject.GetPizza()));
             var img = new Image
             {
                 Source = new BitmapImage(new Uri("pack://application:,,,/images_png/Kebab_Topping.png")),
@@ -163,14 +166,14 @@ namespace DesignPattern_Pizza
             };
             PlaySound();
             PizzaCanvas.Children.Add(img);
-            PizzaStatusBlock.Text = _currentPizza.GetDescription();
-            PriceStatusBlock.Text = $"Current Price: {_currentPizza.GetPrice()} kr.";
+            //PizzaStatusBlock.Text = _currentPizza.GetDescription();
+            //PriceStatusBlock.Text = $"Current Price: {_currentPizza.GetPrice()} kr.";
         }
 
         private void Mozza_Click(object sender, RoutedEventArgs e)
         {
             if (!_baseChosen) { MessageBox.Show("Choose a base first!"); return; }
-            _currentPizza = new MozzarellaDecorator(_currentPizza);
+            _pizzaSubject.SetPizza(new MozzarellaDecorator(_pizzaSubject.GetPizza()));
             var img = new Image
             {
                 Source = new BitmapImage(new Uri("pack://application:,,,/images_png/Mozzarella Topping.png")),
@@ -182,14 +185,14 @@ namespace DesignPattern_Pizza
             };
             PlaySound();
             PizzaCanvas.Children.Add(img);
-            PizzaStatusBlock.Text = _currentPizza.GetDescription();
-            PriceStatusBlock.Text = $"Current Price: {_currentPizza.GetPrice()} kr.";
+            //PizzaStatusBlock.Text = _currentPizza.GetDescription();
+            //PriceStatusBlock.Text = $"Current Price: {_currentPizza.GetPrice()} kr.";
         }
 
         private void Parma_Click(object sender, RoutedEventArgs e)
         {
             if (!_baseChosen) { MessageBox.Show("Choose a base first!"); return; }
-            _currentPizza = new ParmaDecorator(_currentPizza);
+            _pizzaSubject.SetPizza(new ParmaDecorator(_pizzaSubject.GetPizza()));
             var img = new Image
             {
                 Source = new BitmapImage(new Uri("pack://application:,,,/images_png/Parma Topping.png")),
@@ -201,14 +204,14 @@ namespace DesignPattern_Pizza
             };
             PlaySound();
             PizzaCanvas.Children.Add(img);
-            PizzaStatusBlock.Text = _currentPizza.GetDescription();
-            PriceStatusBlock.Text = $"Current Price: {_currentPizza.GetPrice()} kr.";
+            //PizzaStatusBlock.Text = _currentPizza.GetDescription();
+            //PriceStatusBlock.Text = $"Current Price: {_currentPizza.GetPrice()} kr.";
         }
 
         private void Gorgon_Click(object sender, RoutedEventArgs e)
         {
             if (!_baseChosen) { MessageBox.Show("Choose a base first!"); return; }
-            _currentPizza = new GorgonzolaDecorator(_currentPizza);
+            _pizzaSubject.SetPizza(new GorgonzolaDecorator(_pizzaSubject.GetPizza()));
             var img = new Image
             {
                 Source = new BitmapImage(new Uri("pack://application:,,,/images_png/Gorgonzola Topping.png")),
@@ -220,8 +223,8 @@ namespace DesignPattern_Pizza
             };
             PlaySound();
             PizzaCanvas.Children.Add(img);
-            PizzaStatusBlock.Text = _currentPizza.GetDescription();
-            PriceStatusBlock.Text = $"Current Price: {_currentPizza.GetPrice()} kr.";
+            //PizzaStatusBlock.Text = _currentPizza.GetDescription();
+            //PriceStatusBlock.Text = $"Current Price: {_currentPizza.GetPrice()} kr.";
         }
 
         // Bake
@@ -245,11 +248,11 @@ namespace DesignPattern_Pizza
             FlameLabel.Foreground = new SolidColorBrush(Color.FromRgb(51, 51, 51));
             await Task.Delay(300);
 
-            bool correct = _order.CheckOrder(_currentPizza);
+            bool correct = _order.CheckOrder(_pizzaSubject.GetPizza());
 
             if (correct)
             {
-                decimal earned = _currentPizza.GetPrice();
+                decimal earned = _pizzaSubject.GetPizza().GetPrice();
                 _earnings += earned;
                 EarningsLabel.Text = $"DKK {_earnings:0.00}";
                 MessageBox.Show($"✅ Perfect! The customer loved it!\n+DKK {earned:0.00}", "Great job!");
